@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get to know about Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<style>
+  #Mars-news {
+    text-indent: 0.95%;
+  }
+</style>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1><strong>Mission to Mars</strong></h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- mars Listings -->
+    <div class="row" id="Mars-news">
+
+      <p><strong style="font-size: 33px;">Lastest Mars News</strong></p>
+      <p><strong style="font-size: 20px;">{{listings.news_title}}</strong></p>
+      <p>{{listings.news_p}}</p>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7">
+        <p><strong style="font-size: 33px;">Featured Mars Image</strong></p>
+        <img src="{{listings.featured_image_url}}" alt="image placeholder" width="650" height="400">
+      </div>
+      <div class="col-lg-5">
+        <p><strong style="font-size: 20px;">Current Weather on Mars</strong></p>
+        <p>{{listings.mars_weather}}</p>
+        <div>{{listings.Mars_facts_table|safe}}</div>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="row">
+        <p><strong style="font-size: 33px;">Mars hemisphere</strong></p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6"><img src="{{listings.hemisphere_image_urls[0]}}" alt="image placeholder" width="500"
+            height="500">
+          <h3><strong>{{listings.hemisphere_image_names[0]}}</strong></h3>
+        </div>
+        <div class="col-lg-6"><img src="{{listings.hemisphere_image_urls[1]}}" alt="image placeholder" width="500"
+            height="500">
+          <h3><strong>{{listings.hemisphere_image_names[1]}}</strong></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6"><img src="{{listings.hemisphere_image_urls[2]}}" alt="image placeholder" width="500"
+            height="500">
+          <h3><strong>{{listings.hemisphere_image_names[2]}}</strong></h3>
+        </div>
+        <div class="col-lg-6"><img src="{{listings.hemisphere_image_urls[3]}}" alt="image placeholder" width="500"
+            height="500">
+          <h3><strong>{{listings.hemisphere_image_names[3]}}</strong></h3>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</body>
+
+</html>
